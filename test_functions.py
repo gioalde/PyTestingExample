@@ -4,6 +4,7 @@ from functions import factorial
 from functions import count_word_occurrence_in_string as count_occurrence
 from functions import count_word_occurrence_in_file as count_occurrence_in_file
 from functions import check_reactor_temperature
+from FizzBuzz import FizzBuzz
 import pytest
 
 
@@ -49,3 +50,9 @@ def test_check_reactor_temperature():
     assert check_reactor_temperature(90) == 0
     assert check_reactor_temperature(100) == 0
     assert check_reactor_temperature(110) == 1
+
+def test_fizz_buzz():
+    assert FizzBuzz(3) == "Fizz"
+    assert FizzBuzz(5) == "Buzz"
+    assert FizzBuzz(15) == "FizzBuzz"
+    assert FizzBuzz(1) == "1"
