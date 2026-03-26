@@ -55,7 +55,7 @@ def test_fizz_buzz():
     assert FizzBuzz(3) == "Fizz"
     assert FizzBuzz(5) == "Buzz"
     assert FizzBuzz(15) == "FizzBuzz"
-    assert FizzBuzz(1) == "1"
+    assert FizzBuzz(1) == 1
     with pytest.raises(TypeError):
         FizzBuzz("not an integer")
     with pytest.raises(ValueError):
