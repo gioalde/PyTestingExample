@@ -2,6 +2,7 @@ from functions import add, factorial, subtract, multiply
 from functions import convert_fahrenheit_to_celsius as f2c
 from functions import factorial
 from functions import count_word_occurrence_in_string as count_occurrence
+from functions import count_word_occurrence_in_file as count_occurrence_in_file
 import pytest
 
 
@@ -32,3 +33,13 @@ def test_count_word_occurrence_in_string():
     assert count_occurrence(text, "three") == 1
     assert count_occurrence(text, "four") == 1
     assert count_occurrence(text, "five") == 0
+
+def test_count_word_occurrence_in_file():
+    file_name = "test_file.txt"
+    with open(file_name, 'w') as f:
+        f.write("one two one two three four")
+    assert count_occurrence_in_file(file_name, "one") == 2
+    assert count_occurrence_in_file(file_name, "two") == 2
+    assert count_occurrence_in_file(file_name, "three") == 1
+    assert count_occurrence_in_file(file_name, "four") == 1
+    assert count_occurrence_in_file(file_name, "five") == 0
