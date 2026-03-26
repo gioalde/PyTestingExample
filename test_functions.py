@@ -1,6 +1,7 @@
 from functions import add, factorial, subtract, multiply
 from functions import convert_fahrenheit_to_celsius as f2c
 from functions import factorial
+from functions import count_word_occurrence_in_string as count_occurrence
 import pytest
 
 
@@ -24,4 +25,10 @@ def test_factorial():
     assert factorial(1) == 1
     assert factorial(2) == 2
 
-    
+def test_count_word_occurrence_in_string():
+    text = "one two one two three four"
+    assert count_occurrence(text, "one") == 2
+    assert count_occurrence(text, "two") == 2
+    assert count_occurrence(text, "three") == 1
+    assert count_occurrence(text, "four") == 1
+    assert count_occurrence(text, "five") == 0
