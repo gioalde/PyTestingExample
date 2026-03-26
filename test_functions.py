@@ -3,6 +3,7 @@ from functions import convert_fahrenheit_to_celsius as f2c
 from functions import factorial
 from functions import count_word_occurrence_in_string as count_occurrence
 from functions import count_word_occurrence_in_file as count_occurrence_in_file
+from functions import check_reactor_temperature
 import pytest
 
 
@@ -43,3 +44,8 @@ def test_count_word_occurrence_in_file():
     assert count_occurrence_in_file(file_name, "three") == 1
     assert count_occurrence_in_file(file_name, "four") == 1
     assert count_occurrence_in_file(file_name, "five") == 0
+
+def test_check_reactor_temperature():
+    assert check_reactor_temperature(90) == 0
+    assert check_reactor_temperature(100) == 0
+    assert check_reactor_temperature(110) == 1

@@ -1,0 +1,1 @@
+max_temperature = 100  # Example value, replace with actual maximum temperature
